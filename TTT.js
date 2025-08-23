@@ -30,31 +30,19 @@ function Player(name, markerChoice){
 
 function gameLogic(player1, player2){
     let eval1 = player1.markerChoice;
-    let eval2 = player2.markerChoice;
-    while (gameBoard.board !== ""){
-    if (eval1 === gameBoard.board.contains[winningCombos]){
-        console.log(`${eval1} wins!` )
-    } else if (eval2 === gameBoard.board.contains[winningCombos]){
-        console.log(`${eval2} wins!`)
-    } else {
-        console.log(`It's a tie`)
+    let eval2 = player2.markerChoice; 
+    function evalGame(){
+        if (gameBoard.winningCombos.some(combo => combo.every(index => gameBoard.board[index] === eval1))){
+            console.log(`${eval1} wins!`)
+        } else if (gameBoard.winningCombos.some(combo => combo.every(index => gameBoard.board[index] === eval2))){
+            console.log(`${eval2} wins!`)
+        } else {
+            console.log(`No one wins`)
+        }
     };
-}
-     
+    evalGame()
 }
 
 
 const p1 = Player("mena", "x");
 const p2 = Player("notMena", "o");
-
-p1.placeMarker(0);
-p2.placeMarker(1);
-p1.placeMarker(2);
-p2.placeMarker(3);
-p1.placeMarker(4);
-p2.placeMarker(5);
-p1.placeMarker(6);
-p2.placeMarker(7);
-p1.placeMarker(8);
-console.log(gameBoard.board);
-console.log(gameLogic(p1, p2));
