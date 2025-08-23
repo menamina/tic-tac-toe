@@ -1,0 +1,31 @@
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+}
+
+.gameBoard > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 3rem;
+}
+
+.gameBoard > .index2,
+.gameBoard > .index5,
+.gameBoard > .index8 {
+    border-right: none;
+}
+
+.gameBoard > .index6,
+.gameBoard > .index7,
+.gameBoard > .index8 {
+    border-bottom: none;
+}
+
+button {
+    height: 25px;
+}
