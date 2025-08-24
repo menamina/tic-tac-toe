@@ -29,3 +29,13 @@
 button {
     height: 25px;
 }
+
+form,
+.btns,
+.disResult {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
